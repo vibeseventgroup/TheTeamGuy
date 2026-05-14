@@ -20,4 +20,7 @@ jobs:
           cd /home/theteamguy
           git pull origin main
           npm run build
-          pm2 restart theteamguy-api
+          pm2 delete theteamguy-api || true
+          cd /home/theteamguy/Codex
+          pm2 start src/server.js --name theteamguy-api
+          pm2 save
