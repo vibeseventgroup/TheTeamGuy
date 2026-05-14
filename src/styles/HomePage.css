@@ -1,0 +1,459 @@
+.home {
+  min-height: 100vh;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: max(14px, env(safe-area-inset-top)) 12px calc(16px + env(safe-area-inset-bottom));
+  color: #fff;
+  background:
+    radial-gradient(420px 150px at 50% 0%, rgba(255, 107, 0, 0.14), transparent 72%),
+    #070707;
+}
+
+.heroLayer {
+  position: relative;
+  border-radius: 22px;
+  padding: 12px 10px 0;
+  min-height: 460px;
+  overflow: hidden;
+  background: #08090b;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('../assets/images/homepage-background.png');
+  background-size: cover;
+  background-position: center -42px;
+  background-repeat: no-repeat;
+  filter: brightness(1.35) contrast(1.1) saturate(1.12);
+}
+
+.heroLayer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.04) 24%,
+    rgba(0, 0, 0, 0) 42%
+  );
+  pointer-events: none;
+}
+
+.heroLayer::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 240px;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.14) 0%,
+    rgba(0, 0, 0, 0.08) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.stepsHeader {
+  position: relative;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: 36px 1fr 1.16fr 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.menuBtn {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  line-height: 1;
+  margin-top: 2px;
+  align-self: start;
+}
+
+.iconSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.step {
+  min-height: 156px;
+  padding: 0 8px 0 10px;
+  position: relative;
+}
+
+.step.separator {
+  border-left: 1px dashed rgba(255, 255, 255, 0.34);
+}
+
+.stepIcon {
+  position: absolute;
+  left: 10px;
+  top: 2px;
+  color: #ff6b00;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepText {
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.22;
+  color: #f3f3f3;
+  font-weight: 600;
+  text-indent: 50px;
+  padding-top: 16px;
+}
+
+.stepText span {
+  display: inline;
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.stepText em {
+  color: #ff6b00;
+  font-style: normal;
+}
+
+.collage {
+  position: absolute;
+  inset: 90px 0 0;
+  display: none;
+}
+
+.bgPanel {
+  position: absolute;
+  width: 44%;
+  height: 58%;
+  bottom: 0;
+  background-image: url('../assets/images/bryan.png');
+  background-size: cover;
+  background-position: center top;
+  filter: brightness(0.35) saturate(1.2) blur(0.4px);
+  opacity: 0.6;
+}
+
+.bgPanel.left { left: -4%; }
+.bgPanel.right { right: -4%; transform: scaleX(-1); }
+
+.glow {
+  position: absolute;
+  width: 170px;
+  height: 140px;
+  bottom: 30px;
+  border-radius: 50%;
+}
+
+.leftGlow {
+  left: 4%;
+  background: radial-gradient(circle, rgba(255, 0, 153, 0.42) 0%, rgba(255, 107, 0, 0.12) 45%, transparent 78%);
+}
+
+.rightGlow {
+  right: 4%;
+  background: radial-gradient(circle, rgba(118, 53, 255, 0.48) 0%, rgba(255, 107, 0, 0.18) 45%, transparent 75%);
+}
+
+.bryan {
+  position: absolute;
+  z-index: 5;
+  width: 70%;
+  left: 50%;
+  bottom: -2px;
+  transform: translateX(-50%);
+  filter:
+    drop-shadow(0 0 26px rgba(255, 118, 24, 0.36))
+    drop-shadow(0 0 44px rgba(111, 59, 255, 0.24))
+    drop-shadow(0 16px 24px rgba(0, 0, 0, 0.55));
+}
+
+.bubbleWrap {
+  margin-top: -4px;
+  padding: 0 8px;
+  position: relative;
+  z-index: 5;
+}
+
+.bubble {
+  position: relative;
+  background: #f4f4f4;
+  color: #0f1115;
+  border: 4px solid #ff6b00;
+  border-radius: 28px;
+  padding: 18px 16px 16px;
+  font-size: 17px;
+  line-height: 1.03;
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.42);
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  right: 18%;
+  top: -20px;
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 22px solid #f4f4f4;
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  right: calc(18% - 2px);
+  top: -25px;
+  width: 0;
+  height: 0;
+  border-left: 21px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 27px solid #ff6b00;
+}
+
+.bubble strong { color: #ff6b00; }
+
+.bubble p {
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  text-wrap: pretty;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 0 8px;
+}
+
+.option {
+  min-height: 88px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(180deg, rgba(17, 18, 20, 0.9), rgba(9, 10, 12, 0.9));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 12px 14px;
+}
+
+.optionIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 2px solid #ff6b00;
+  display: grid;
+  place-items: center;
+  color: #ff6b00;
+  flex: 0 0 auto;
+}
+
+.optionText {
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+.inputRow {
+  margin-top: 10px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.inputRow input {
+  width: 100%;
+  height: 62px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(10, 10, 10, 0.9);
+  color: #fff;
+  font-size: 20px;
+  padding: 0 62px 0 16px;
+}
+
+.inputRow button {
+  position: absolute;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: #ff6b00;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+
+.inputRow button .iconSvg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 390px) {
+  .home {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .heroLayer {
+    min-height: 420px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .stepsHeader {
+    grid-template-columns: 30px 1fr 1.16fr 1fr;
+    gap: 0;
+  }
+
+  .menuBtn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .stepIcon {
+    width: 28px;
+    height: 28px;
+    left: 8px;
+    top: 1px;
+  }
+
+  .stepText {
+    font-size: 8px;
+    line-height: 1.18;
+    width: 100%;
+    text-indent: 39px;
+    padding-top: 12px;
+  }
+
+  .stepText span {
+    font-size: 13px;
+  }
+
+  .bryan {
+    width: 66%;
+  }
+
+  .bubble {
+    font-size: 16px;
+    border-radius: 24px;
+    padding: 16px 14px 14px;
+  }
+
+  .bubble::before {
+    top: -28px;
+    border-left-width: 24px;
+    border-right-width: 16px;
+    border-bottom-width: 30px;
+  }
+
+  .bubble::after {
+    top: -22px;
+    border-left-width: 21px;
+    border-right-width: 14px;
+    border-bottom-width: 24px;
+  }
+
+  .grid {
+    gap: 8px;
+    padding: 0 4px;
+  }
+
+  .option {
+    min-height: 78px;
+    padding: 10px;
+    gap: 9px;
+  }
+
+  .optionIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .optionText {
+    font-size: 13px;
+    line-height: 1.15;
+  }
+
+  .inputRow {
+    padding: 0 4px;
+  }
+
+  .inputRow input {
+    height: 56px;
+    font-size: 16px;
+    padding-left: 14px;
+  }
+
+  .inputRow button {
+    right: 14px;
+  }
+
+  .inputRow button .iconSvg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (min-width: 391px) and (max-width: 430px) {
+  .heroLayer {
+    min-height: 440px;
+  }
+
+  .stepText {
+    font-size: 9px;
+    text-indent: 43px;
+    padding-top: 14px;
+  }
+
+  .stepText span {
+    font-size: 14px;
+  }
+
+  .stepIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .bubble {
+    font-size: 17px;
+    padding: 17px 15px 15px;
+  }
+
+  .option {
+    min-height: 82px;
+  }
+
+  .optionText {
+    font-size: 13px;
+  }
+  
+  .heroBg {
+    background-position: center -24px;
+  }
+
+  .bryan {
+    width: 67%;
+  }
+}
